@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Em Formação</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+          sans-serif;
+      }
+      body {
+        background-color: #0b1519; /* Fundo escuro baseado na cor profunda do logo */
+        background-image:
+          radial-gradient(
+            at 50% 0%,
+            rgba(92, 184, 92, 0.15) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 100% 100%,
+            rgba(11, 60, 77, 0.4) 0px,
+            transparent 70%
+          );
+        color: #f7f6f2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 24px;
+        overflow: hidden;
+      }
+
+      /* Card central moderno com efeito de vidro fosco */
+      .card {
+        background: rgba(247, 246, 242, 0.02);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(247, 246, 242, 0.07);
+        padding: 3.5rem 4rem;
+        border-radius: 24px;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+        animation: surgeCard 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      h1 {
+        font-size: 4rem;
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        line-height: 1.1;
+        /* Degradê exato extraído do ícone do logo */
+        background: linear-gradient(
+          135deg,
+          #a3e635 0%,
+          #06b6d4 50%,
+          #0b3c4d 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1.5rem;
+        display: inline-block;
+      }
+
+      p {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: #f7f6f2;
+        opacity: 0.4;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+
+      /* Animações de entrada */
+      @keyframes surgeCard {
+        from {
+          opacity: 0;
+          transform: translateY(30px) scale(0.98);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .card {
+          padding: 2.5rem 2rem;
+        }
+        h1 {
+          font-size: 2.75rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <h1>EM BREVE<span id="typing-effect"></span></h1>
+      <p>Em Formação</p>
+    </div>
+
+    <script>
+      // Animação profissional e suave para os três pontos correndo em loop infinito
+      const target = document.getElementById('typing-effect');
+      const dots = ['.', '..', '...'];
+      let currentIndex = 0;
+
+      setInterval(() => {
+        target.textContent = dots[currentIndex];
+        currentIndex = (currentIndex + 1) % dots.length;
+      }, 600);
+    </script>
+  </body>
+</html>
